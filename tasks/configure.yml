@@ -4,3 +4,15 @@
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
   become: yes
+
+- name: Install Zsh configuration
+  ansible.builtin.file:
+    src: zshrc
+    dest: "/home/{{ ansible_user_id }}/.zshrc"
+    force: yes
+
+- name: Install Powerlevel10k configuration
+  ansible.builtin.file:
+    src: p10k.zsh
+    dest: "/home/{{ ansible_user_id }}/.p10k.zsh"
+    force: yes

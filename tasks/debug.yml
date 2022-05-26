@@ -1,0 +1,4 @@
+---
+- name: Suggest login/logout to complete Zsh configuration
+  ansible.builtin.debug:
+    msg: Please logout/login to complete Zsh configuration.
