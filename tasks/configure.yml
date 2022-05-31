@@ -6,10 +6,9 @@
   become: yes
 
 - name: Install Zsh configuration
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: zshrc
     dest: "/home/{{ ansible_user_id }}/.zshrc"
-    state: hard
     force: yes
 
 - name: Install Powerlevel10k configuration
