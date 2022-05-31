@@ -12,7 +12,7 @@
     force: yes
 
 - name: Install Powerlevel10k configuration
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: p10k.zsh
     dest: "/home/{{ ansible_user_id }}/.p10k.zsh"
     force: yes
