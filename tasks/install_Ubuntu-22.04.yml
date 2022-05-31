@@ -12,7 +12,7 @@
   args:
     creates: "/home/{{ ansible_user_id }}/.oh-my-zsh"
 
-
 - name: Install Powerlevel10k Zsh theme (Ubuntu 22.04)
-  ansible.builtin.shell:
-    cmd: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  ansible.builtin.shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  args:
+    creates: "/home/{{ ansible_user_id }}/.oh-my-zsh/custom}/themes/powerlevel10k"
