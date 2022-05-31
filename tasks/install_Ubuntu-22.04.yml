@@ -10,6 +10,8 @@
 - name: Install Oh My Zsh (Ubuntu 22.04)
   ansible.builtin.shell:
     cmd: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    args:
+      creates: "/home/{{ ansible_user_id }}/.oh-my-zsh"
 
 
 - name: Install Powerlevel10k Zsh theme (Ubuntu 22.04)
