@@ -10,7 +10,10 @@ galaxy_info:
   platforms:
     - name: ArchLinux
       versions:
-        - all
+        - rolling
+    - name: Ubuntu
+      versions:
+        - 22.04
   galaxy_tags:
     - zsh
     - oh-my-zsh
