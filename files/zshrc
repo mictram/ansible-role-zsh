@@ -33,4 +33,4 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 alias push-all='git remote | xargs -L1 git push --all'
 
 # Python executables path
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
