@@ -1,10 +1,5 @@
 ---
-- name: Install Zsh and Oh My Zsh
-  pacman:
-    name:
-      - zsh
-      - oh-my-zsh-git
-  become: yes
-
-- name: Install Powerlevel10k Zsh theme
-  command: yay -S --noconfirm zsh-theme-powerlevel10k-git
+- name: Install distrobution level dependancies
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "install_{{ ansible_distribution }}-{{ ansible_distribution_version}}.yml"
