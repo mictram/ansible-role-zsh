@@ -6,5 +6,5 @@
       - oh-my-zsh-git
   become: yes
 
-- name: Install Powerlevel10k Zsh theme (ArchLinux rolling)
-  command: yay -S --noconfirm zsh-theme-powerlevel10k-git
+- name: Install Powerlevel10k Zsh theme and Meslo font (ArchLinux rolling)
+  command: yay -S --noconfirm zsh-theme-powerlevel10k-git ttf-meslo-nerd-font-powerlevel10k
