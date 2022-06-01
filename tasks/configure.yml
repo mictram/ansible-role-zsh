@@ -8,11 +8,11 @@
 - name: Install Zsh configuration
   ansible.builtin.copy:
     src: zshrc
-    dest: "/home/{{ ansible_user_id }}/.zshrc"
+    dest: "{{ ansible_env.HOME }}/.zshrc"
     force: yes
 
 - name: Install Powerlevel10k configuration
   ansible.builtin.copy:
     src: p10k.zsh
-    dest: "/home/{{ ansible_user_id }}/.p10k.zsh"
+    dest: "{{ ansible_env.HOME}}/.p10k.zsh"
     force: yes
