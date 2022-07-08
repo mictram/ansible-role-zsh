@@ -16,3 +16,8 @@
     src: p10k.zsh
     dest: "{{ ansible_env.HOME}}/.p10k.zsh"
     force: yes
+
+- name: Install distrobution level zsh configurations
+  include_tasks: "{{ item }}"
+  with_first_found:
+    - "configure_{{ ansible_distribution }}-{{ ansible_distribution_version}}.yml"
