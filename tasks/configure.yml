@@ -20,4 +20,4 @@
 - name: Install distrobution level zsh configurations
   include_tasks: "{{ item }}"
   with_first_found:
-    - "configure_{{ ansible_distribution }}-{{ ansible_distribution_version}}.yml"
+    - "install_{{ ansible_distribution }}-{{ ansible_distribution_version}}.yml"
