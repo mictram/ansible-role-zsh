@@ -3,8 +3,10 @@
   pacman:
     name:
       - zsh
-      - oh-my-zsh-git
   become: yes
+
+- name: Install Oh My Zsh (git)
+  command: yay -S --noconfirm oh-my-zsh-git
 
 - name: Install Powerlevel10k Zsh theme and Meslo font (ArchLinux rolling)
   command: yay -S --noconfirm zsh-theme-powerlevel10k-git ttf-meslo-nerd-font-powerlevel10k
