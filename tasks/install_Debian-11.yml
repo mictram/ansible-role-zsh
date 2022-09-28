@@ -1,0 +1,18 @@
+---
+- name: Install Zsh and dependancies (Debian 11)
+  ansible.builtin.apt:
+    pkg:
+      - curl
+      - git
+      - zsh
+  become: yes
+
+- name: Install Oh My Zsh (Debian 11)
+  ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  args:
+    creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+
+- name: Install Powerlevel10k Zsh theme (Debian 11)
+  ansible.builtin.shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  args:
+    creates: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
